@@ -20,8 +20,8 @@ namespace WindowsFormsApp17._1
         }
         public Cursist(string familieNaam, string voorNaam)
         {
-            _familieNaam = familieNaam;
-            _voorNaam = voorNaam;
+            this.FamilieNaam = familieNaam;
+            this.VoorNaam = voorNaam;
         }
         public string FamilieNaam
         {
@@ -35,8 +35,7 @@ namespace WindowsFormsApp17._1
         }
         public string Naam
         {
-            get { return _familieNaam + " " + _voorNaam; }
+            get { return _voorNaam + " " + _familieNaam; }
         }
-
     }
 }

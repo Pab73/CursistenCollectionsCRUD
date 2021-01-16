@@ -125,7 +125,6 @@ namespace WindowsFormsApp17._1
             this.Controls.Add(this.lbCursisten);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
