@@ -35,7 +35,7 @@ namespace WindowsFormsApp17._1
         }
         public string Naam
         {
-            get { return _familieNaam + _voorNaam; }
+            get { return _familieNaam + " " + _voorNaam; }
         }
 
     }

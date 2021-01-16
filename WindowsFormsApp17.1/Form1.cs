@@ -19,11 +19,11 @@ namespace WindowsFormsApp17._1
         }
         Cursist cursist = new Cursist();
         List<string> overzicht = new List<string>();
-        List<string> lijstStudenten = new List<string>();
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //cursist.VoorNaam = txtVoorNaam.Text;
+            //cursist.FamilieNaam = txtFamilieNaam.Text;
         }
         void Wegschrijven()
         {
@@ -41,12 +41,11 @@ namespace WindowsFormsApp17._1
             {
                 cursist.VoorNaam = txtVoorNaam.Text;
                 cursist.FamilieNaam = txtFamilieNaam.Text;
-                overzicht.Add($"{cursist.VoorNaam} {cursist.FamilieNaam}. ");
+                overzicht.Add($" {cursist.Naam}. ");
                 Wegschrijven();
                 ClearTxtBoxes();
             }
         }
-
         private void btnSluiten_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -56,12 +55,19 @@ namespace WindowsFormsApp17._1
             txtVoorNaam.Text = "";
             txtFamilieNaam.Text = "";
         }
-
         private void btnVerwijderen_Click(object sender, EventArgs e)
         {
-            ClearTxtBoxes();
-            overzicht.Remove((string)lbCursisten.SelectedItem);
-            Wegschrijven();
+            DialogResult dialogResult = MessageBox.Show($"Verwijderen van {cursist.Naam}. ", "Verwijderen. ", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (dialogResult == DialogResult.Yes)
+            {
+                ClearTxtBoxes();
+                overzicht.Remove((string)lbCursisten.SelectedItem);
+                Wegschrijven();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                ClearTxtBoxes();
+            }
         }
     }
 }
