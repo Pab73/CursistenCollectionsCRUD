@@ -17,7 +17,7 @@ namespace WindowsFormsApp17._1
         {
             InitializeComponent();
         }
-        Cursist cursist = new Cursist();
+
         List<string> overzicht = new List<string>();
 
         void Wegschrijven()
@@ -34,8 +34,8 @@ namespace WindowsFormsApp17._1
             }
             else
             {
-                cursist.VoorNaam = txtVoorNaam.Text;
-                cursist.FamilieNaam = txtFamilieNaam.Text;
+                Cursist cursist = new Cursist(txtVoorNaam.Text, txtFamilieNaam.Text);
+
                 overzicht.Add($"{cursist.Naam}. ");
                 Wegschrijven();
                 ClearTxtBoxes();
@@ -47,8 +47,7 @@ namespace WindowsFormsApp17._1
         }
         void ClearTxtBoxes()
         {
-            txtVoorNaam.Text = "";
-            txtFamilieNaam.Text = "";
+            Cursist cursist = new Cursist(txtVoorNaam.Text = "", txtFamilieNaam.Text = "");
         }
         private void btnVerwijderen_Click(object sender, EventArgs e)
         {

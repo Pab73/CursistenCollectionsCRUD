@@ -18,7 +18,7 @@ namespace WindowsFormsApp17._1
             _familieNaam = "";
             _voorNaam = "";
         }
-        public Cursist(string familieNaam, string voorNaam)
+        public Cursist(string voorNaam, string familieNaam)
         {
             this.FamilieNaam = familieNaam;
             this.VoorNaam = voorNaam;
